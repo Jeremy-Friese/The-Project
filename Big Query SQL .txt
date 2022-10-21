@@ -1,5 +1,6 @@
+Just seeing how everything uploads here. This is a sample JOIN. Will update when I have more stats. 
 
-BIG Query CODE 
+BIG Query SQL 
 
 SELECT DISTINCT vitals.DATE
  ,stats.DATE
