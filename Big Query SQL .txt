@@ -1,6 +1,12 @@
-Just seeing how everything uploads here. This is a sample JOIN. Will update when I have more stats. 
-
 BIG Query SQL 
+
+// The WHERE clause 
+
+SELECT *
+FROM `portfolio-website-smb.OCT_STATS.oct_stats` 
+WHERE DISTANCE > 32.0 
+
+// FULL JOIN 
 
 SELECT DISTINCT stats.DATE
 ,ROUTE
