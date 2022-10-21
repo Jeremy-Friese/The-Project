@@ -3,7 +3,10 @@
 Data Analyst Portfolio Project for https://scottmbecker.com/
 
 Summary
-To track real world data analysis results for my training to ride a Century Ride (100 Miles personal goal) and the MS 150 (Houston, Texas supporting muscular dystrophy) in April 2023. This project will be ongoing for the 6 months up to the MS 150. New data will be posted weekly, with monthly recaps of the data / rides. Data sets , along with the SQL and Python code will be made available here on My Github
+
+To track real world data analysis results for my training to ride a Century Ride (100 Miles personal goal) and the MS 150 (Houston, Texas supporting muscular dystrophy) in April 2023. 
+
+This project will be ongoing for the 6 months up to the MS 150. New data will be posted weekly, with monthly recaps of the data / rides. Data sets , along with the SQL and Python code will be made available here on My Github
 
 I will use Excel, Tableau, Data Studio (Looker), Google and YouTube Analytics for data analysis and visualizations. I will also use SQL Server and Google Big Query for SQL analysis. I will use Juypter Notebooks for Python.
 
