@@ -8,7 +8,7 @@ SELECT DISTINCT stats.DATE
 ,DISTANCE
 ,AVG_SPEED
 ,vitals.WEIGHT
-,vitals.BMI__
+,vitals.BMI__ as BMI
  FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
  FULL JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
  ON (
