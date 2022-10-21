@@ -2,43 +2,21 @@ Just seeing how everything uploads here. This is a sample JOIN. Will update when
 
 BIG Query SQL 
 
-SELECT DISTINCT vitals.DATE
- ,stats.DATE
- ,TIME
- ,RIDE_TYPE
- ,ROUTE 
- ,DISTANCE
- ,AVG_SPEED
- ,MAX_HR
- ,MAX_CADENCE
- ,WEIGHT
- ,BMI__
- ,SYSTOLIC
- ,DIASTOLIC
-FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
-LEFT JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
-ON (
-stats.DATE = stats.DATE
-)
-ORDER BY vitals.DATE
+SELECT DISTINCT stats.DATE
+,ROUTE
+,RIDE_TYPE
+,DISTANCE
+,AVG_SPEED
+,vitals.WEIGHT
+,vitals.BMI__
 
+ FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
+ 
+ FULL JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
 
-SELECT DISTINCT
- stats.DATE
-, TIME
- ,RIDE_TYPE
- ,ROUTE 
- ,DISTANCE
- ,AVG_SPEED
- ,MAX_HR
- ,MAX_CADENCE
- ,WEIGHT
- ,BMI__
- ,SYSTOLIC
- ,DIASTOLIC
-FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
-LEFT OUTER JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
-ON (
-stats.DATE = stats.DATE
-)
-ORDER BY stats.DATE ASC
+ ON (
+vitals.DATE = vitals.DATE
+
+ )
+WHERE vitals.DATE < '2022-10-14' AND WEIGHT > 170
+ORDER BY DATE
