@@ -1,4 +1,4 @@
-BIG Query SQL 
+Big Query SQL 
 
 // The WHERE clause 
 
