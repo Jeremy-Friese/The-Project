@@ -4,7 +4,7 @@ Data Analyst Portfolio Project for scottmbecker.com
 
 Summary
 
-To track real world data analysis results for my training to ride a Century Ride (100 Miles personal goal) and the MS 150 (Houston, Texas supporting muscular dystrophy) in April 2023. This project will be ongoing for the 6 months up to the MS 150. New data will be posted weekly, with monthly recaps of the data / rides. Data sets , along with the SQL and Python code will be made available here on My Github
+To track real world data analysis results for my training to ride a Century Ride (100 Miles personal goal) and the MS 150 (Houston, Texas supporting muscular dystrophy) in April 2023. This project will be ongoing for the 6 months up to the MS 150. New data will be posted weekly, with monthly recaps of the data / rides. Data sets , along with the SQL and Python code will be made available here on My Github
 
 Please DONATE to support muscular dystrophy : MS 150 HOUSTON (You will also help fund my ride. I have set a $500.00 goal.)
 
@@ -18,10 +18,8 @@ I will also be tracking my health vitals daily, including weight, heart rate, bl
 
 I will post my rides as well as links to some of the videos of my rides on the Garmin Tacx to YouTube. These will be my initial rides to get a baseline, but can also be used by anyone to train with as well. I have added royalty free music to them in order to provide some inspiration.
 
-Follow me on Strava 
+Follow me on Strava 
 
 Visit my YouTube Channel here to view all of my videos. Please Like and Subscribe!
 
 My Tableau Projects
-
-Leave a Reply
