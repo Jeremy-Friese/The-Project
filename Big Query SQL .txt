@@ -1,12 +1,12 @@
 Big Query SQL 
 
-// The WHERE clause 
+-- The WHERE clause 
 
 SELECT *
 FROM `portfolio-website-smb.OCT_STATS.oct_stats` 
 WHERE DISTANCE > 32.0 
 
-// FULL JOIN 
+-- FULL JOIN 
 
 SELECT DISTINCT stats.DATE
 ,ROUTE
@@ -23,7 +23,7 @@ vitals.DATE = vitals.DATE
 WHERE vitals.DATE < '2022-10-14' AND WEIGHT > 170
 ORDER BY DATE
 
-// Was getting some wonky results in my vitals. The weight and BMI just averaged out. I revised the query and got the results I wanted. I wanted to get results to show 
+-- Was getting some wonky results in my vitals. The weight and BMI just averaged out. I revised the query and got the results I wanted. I wanted to get results to show 
 only the matching dates where there were vitals and rides. 
 
 SELECT stats.DATE
