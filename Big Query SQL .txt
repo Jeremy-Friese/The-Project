@@ -4,7 +4,7 @@ Big Query SQL
 
 SELECT *
 FROM `portfolio-website-smb.OCT_STATS.oct_stats` 
-WHERE DISTANCE > 32.0 
+WHERE DISTANCE > 20.0 
 
 -- FULL JOIN 
 
