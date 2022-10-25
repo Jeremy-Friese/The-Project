@@ -75,7 +75,7 @@ CREATE TABLE dbo.oct_rides
 "calories_burned" int,
 );
 
--- Insert data
+-- Insert data. (Cleaned up the insert statement to be more efficient.)
 
 INSERT INTO dbo.oct_rides
 (date, ride_type, route, time, distance, avg_speed, max_speed, avg_cadence, max_cadence, avg_heart_rate, max_heart_rate, brpm_avg, brpm_max, elavation_gain, avg_power, max_power, ftp, total_work_kj, load, calories_burned)
