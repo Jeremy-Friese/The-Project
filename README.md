@@ -1,6 +1,6 @@
 # The-Project
 
-Summary
+Summary: See the Project on my portfolio website: https://scottmbecker.com/
 
 To track real world data analysis results for my training to ride a Century Ride (100 Miles personal goal) and the MS 150 (Houston, Texas supporting muscular dystrophy) in April 2023.
 
