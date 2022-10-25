@@ -136,9 +136,13 @@ SELECT rides.date
 FROM dbo.oct_rides as rides
 INNER JOIN dbo.oct_vitals as vitals
 ON 
-(rides.date = vitals.date
+(
+rides.date = vitals.date
 )
 INNER JOIN dbo.oct_power_meter as meter
-ON (vitals.date = meter.date)
+ON 
+(
+vitals.date = meter.date
+)
 WHERE vitals.date > '2022-10-13' AND last_sleep > 6
 ORDER BY date
