@@ -1,4 +1,4 @@
-// Creating Oct_Vitals Table
+-- Creating Oct_Vitals Table
 
 CREATE TABLE dbo.oct_vitals
 (
