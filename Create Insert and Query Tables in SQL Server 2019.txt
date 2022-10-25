@@ -17,7 +17,7 @@ CREATE TABLE dbo.oct_vitals
 "last_sleep" int,
 );
 
-
+-- Insert data
 
 INSERT INTO dbo.oct_vitals 
 (date, weight, avg_weight, bmi, body_fat, muscle_mass, bone_mass, body_water, systolic, diastolic, heart_rate, oxygen, last_sleep)
@@ -44,12 +44,12 @@ INSERT INTO dbo.oct_vitals
 VALUES
 ('2022-10-24', 173.3, 173, 25.7, 24.5, 68.4, 9, 55.1, 111, 78, 75, 97, 7)
 
-
+-- Query the table
 
 SELECT *
 FROM dbo.oct_vitals
 
-// Creating Oct_Rides Table 
+-- Creating Oct_Rides Table 
 
 CREATE TABLE dbo.oct_rides
 (
@@ -75,6 +75,8 @@ CREATE TABLE dbo.oct_rides
 "calories_burned" int,
 );
 
+-- Insert data
+
 INSERT INTO dbo.oct_rides
 (date, ride_type, route, time, distance, avg_speed, max_speed, avg_cadence, max_cadence, avg_heart_rate, max_heart_rate, brpm_avg, brpm_max, elavation_gain, avg_power, max_power, ftp, total_work_kj, load, calories_burned)
 VALUES ('2022-10-01', 'ROAD_CYCLING', 'DJP', '2:15:31', 32.14, 14.2, 26.4, 0, 0, 147, 175, 0, 0, 620, 84, 0, 0, 0, 0, 1330),
@@ -86,11 +88,12 @@ VALUES ('2022-10-01', 'ROAD_CYCLING', 'DJP', '2:15:31', 32.14, 14.2, 26.4, 0, 0,
 ('2022-10-22', 'ROAD_CYCLING', 'ZUBE_STOKES', '2:41:32', 43.51, 16.2, 24.9, 80, 137, 155, 175, 36, 44, 577, 90, 529, 200, 913, 365, 1163),
 ('2022-10-23', 'TRAINER', 'MILANO', '0:30:21', 9.68, 19.1, 24.7, 100, 113, 163, 181, 0, 0, 75, 133, 274, 200, 243, 50, 242);
 
+-- Query data
 
 SELECT * 
 FROM dbo.oct_rides
 
-// Creating Oct_Power_Meter Table
+-- Creating Oct_Power_Meter Table
 
 CREATE TABLE dbo.oct_power_meter
 (
@@ -104,18 +107,20 @@ CREATE TABLE dbo.oct_power_meter
 "total_strokes" int, 
 );
 
+-- insert data
+
 INSERT INTO dbo.oct_power_meter
 (date, route, left_balance, right_balance, total_stress_score, natural_power, intensity_factor, total_strokes)
 VALUES
 ('2022-10-22', 'ZUBE_STOKES', 60, 40, 84, 109, '0.546', 11691), 
 ('2022-10-23', 'MILANO', 65, 35, 13.5, 104, '0.519', 3036);
 
+-- Query the data
+
 SELECT * 
 FROM dbo.oct_power_meter
 
 -- Multiple Joins
-
--- Multiple Joins 
 
 SELECT rides.date
 ,rides.route
@@ -137,5 +142,3 @@ INNER JOIN dbo.oct_power_meter as meter
 ON (vitals.date = meter.date)
 WHERE vitals.date > '2022-10-13' AND last_sleep > 6
 ORDER BY date
-
-
