@@ -97,4 +97,26 @@ SET left_balance = 'NULL'
 WHERE route = 'LOMBARDY2'
 
 
+-- Multiple Joins 
+
+SELECT rides.date
+,rides.route
+,ride_type
+,distance
+,avg_speed
+,weight
+,bmi
+,last_sleep
+,left_balance as LB
+,right_balance as RB
+,total_strokes
+FROM dbo.oct_rides as rides
+INNER JOIN dbo.oct_vitals as vitals
+ON 
+(rides.date = vitals.date
+)
+INNER JOIN dbo.oct_power_meter as meter
+ON (vitals.date = meter.date)
+WHERE vitals.date > '2022-10-13' AND last_sleep > 6
+ORDER BY date
 
