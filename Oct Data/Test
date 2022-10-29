@@ -1,0 +1,17 @@
+— Sample JOIN
+
+SELECT stats.DATE
+,ROUTE
+,RIDE_TYPE
+,DISTANCE
+,AVG_SPEED
+,vitals.WEIGHT
+,vitals.BMI__ as BMI
+,vitals.LAST_SLEEP
+ FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
+ JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
+ ON (
+stats.DATE = vitals.DATE
+ )
+WHERE vitals.DATE > ‘2022-10-13’ AND LAST_SLEEP > 6
+ORDER BY DATE
