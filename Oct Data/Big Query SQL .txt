@@ -1,0 +1,43 @@
+
+BIG Query CODE 
+
+SELECT DISTINCT vitals.DATE
+ ,stats.DATE
+ ,TIME
+ ,RIDE_TYPE
+ ,ROUTE 
+ ,DISTANCE
+ ,AVG_SPEED
+ ,MAX_HR
+ ,MAX_CADENCE
+ ,WEIGHT
+ ,BMI__
+ ,SYSTOLIC
+ ,DIASTOLIC
+FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
+LEFT JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
+ON (
+stats.DATE = stats.DATE
+)
+ORDER BY vitals.DATE
+
+
+SELECT DISTINCT
+ stats.DATE
+, TIME
+ ,RIDE_TYPE
+ ,ROUTE 
+ ,DISTANCE
+ ,AVG_SPEED
+ ,MAX_HR
+ ,MAX_CADENCE
+ ,WEIGHT
+ ,BMI__
+ ,SYSTOLIC
+ ,DIASTOLIC
+FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
+LEFT OUTER JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
+ON (
+stats.DATE = stats.DATE
+)
+ORDER BY stats.DATE ASC
