@@ -1,26 +1,15 @@
 
 BIG Query CODE 
 
-SELECT DISTINCT vitals.DATE
- ,stats.DATE
- ,TIME
- ,RIDE_TYPE
- ,ROUTE 
- ,DISTANCE
- ,AVG_SPEED
- ,MAX_HR
- ,MAX_CADENCE
- ,WEIGHT
- ,BMI__
- ,SYSTOLIC
- ,DIASTOLIC
-FROM `portfolio-website-smb.OCT_STATS.oct_stats` as stats
-LEFT JOIN `portfolio-website-smb.OCT_VITALS.oct_vitals` as vitals
-ON (
-stats.DATE = stats.DATE
-)
-ORDER BY vitals.DATE
+Ride and Vitals Query 
 
+— Sample WHERE clause:
+
+SELECT *
+FROM `portfolio-website-smb.OCT_STATS.oct_stats`
+WHERE DISTANCE > 20.0
+
+-- Sample Join
 
 SELECT DISTINCT
  stats.DATE
@@ -41,3 +30,54 @@ ON (
 stats.DATE = stats.DATE
 )
 ORDER BY stats.DATE ASC
+
+-- Big Query YouTube Queries
+
+Join 
+
+SELECT DISTINCT
+ combined.date
+,combined.video_id
+,combined.country_code
+,traffic_source_detail
+,traffic.traffic_source_type
+,traffic.views
+,traffic.watch_time_minutes
+
+ FROM `portfolio-website-smb.YouTubeData.channel_combined_a2_YTD` AS combined
+ 
+JOIN `portfolio-website-smb.YouTubeData.channel_traffic_source_a2_YTD` AS traffic
+ ON
+ (
+     Combined.date = traffic.date 
+ )
+ ORDER BY combined.video_id
+ 
+ -- Multiple Joins
+
+SELECT DISTINCT
+ combined.date
+,combined.video_id
+,combined.country_code
+,traffic_source_detail
+,traffic.traffic_source_type AS source_type
+,traffic.views
+,traffic.watch_time_minutes AS watch_minutes
+,device.operating_system AS os
+,device.device_type AS device
+
+ FROM `portfolio-website-smb.YouTubeData.channel_combined_a2_YTD` AS combined
+ 
+JOIN `portfolio-website-smb.YouTubeData.channel_traffic_source_a2_YTD` AS traffic
+JOIN `portfolio-website-smb.YouTubeData.channel_device_os_a2_YTD` AS device
+ ON
+ (
+    traffic.date = device.date
+ )
+ ON
+ (
+   combined.date = device.date
+ )
+ WHERE traffic.traffic_source_detail = 'scottmbecker.com'
+ ORDER BY combined.video_id 
+ 
