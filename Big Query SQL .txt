@@ -110,3 +110,6 @@ FULL OUTER JOIN `portfolio-website-smb.analytics_330144976.events_20230102` AS J
  (
    JAN02.event_date = JAN03.event_date
  )
+ ORDER BY JAN02.user_pseudo_id 
+ 
+ 
