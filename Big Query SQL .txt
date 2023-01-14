@@ -79,3 +79,34 @@ JOIN `portfolio-website-smb.YouTubeData.channel_device_os_a2_YTD` AS device
  )
  WHERE traffic.traffic_source_detail = 'scottmbecker.com'
  ORDER BY combined.video_id 
+ 
+ 
+ SELECT 
+JAN02.event_date AS event_date1
+,JAN03.event_date AS event_date2
+,JAN02.event_name
+,JAN03.event_name
+,JAN02.user_pseudo_id
+,JAN03.user_pseudo_id
+,JAN02.device.category
+,JAN03.device.category
+,JAN02.device.mobile_brand_name
+,JAN03.device.mobile_brand_name
+,JAN02.device.mobile_model_name
+,JAN03.device.mobile_model_name
+,JAN02.geo.country
+,JAN03.geo.country
+,JAN02.geo.region
+,JAN03.geo.region
+,JAN02.geo.metro
+,JAN03.geo.metro
+,JAN02.traffic_source.name
+,JAN03.traffic_source.name
+,JAN02.traffic_source.medium
+,JAN02.traffic_source.medium
+FROM `portfolio-website-smb.analytics_330144976.events_20230103` AS JAN03
+FULL OUTER JOIN `portfolio-website-smb.analytics_330144976.events_20230102` AS JAN02
+ ON
+ (
+   JAN02.event_date = JAN03.event_date
+ )
