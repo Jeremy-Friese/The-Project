@@ -14,12 +14,12 @@ class Application(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
-        self.url_label = tk.Label(self, text="Website URLs:")
+        self.url_label = tk.Label(self, text="Website URLs: One Per Line")
         self.url_label.pack()
         self.url_text = tk.Text(self, height=4)
         self.url_text.pack()
 
-        self.keyword_label = tk.Label(self, text="Keywords:")
+        self.keyword_label = tk.Label(self, text="Keywords: One Per Line")
         self.keyword_label.pack()
         self.keyword_text = tk.Text(self, height=4)
         self.keyword_text.pack()
@@ -149,4 +149,3 @@ if __name__ == "__main__":
 root.title("Scott M. Becker Consulting")
 app = Application(master=root)
 app.mainloop()
-    
