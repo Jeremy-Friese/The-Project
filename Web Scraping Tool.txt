@@ -32,8 +32,17 @@ class Application(tk.Frame):
         self.run_button = tk.Button(self, text="Run", command=self.run)
         self.run_button.pack()
 
-        self.result_label = tk.Label(self, text="")
-        self.result_label.pack()
+        self.results_frame = tk.Frame(self)
+        self.results_frame.pack(fill=tk.BOTH, expand=True)
+
+        self.result_label = tk.Text(self.results_frame, wrap=tk.WORD, state=tk.DISABLED)
+        self.result_label.pack(fill=tk.BOTH, expand=True)
+
+        self.result_scrollbar = tk.Scrollbar(self.results_frame)
+        self.result_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        self.result_label.config(yscrollcommand=self.result_scrollbar.set)
+        self.result_scrollbar.config(command=self.result_label.yview)
 
         self.export_button = tk.Button(self, text="Export to CSV", command=self.export_csv)
         self.export_button.pack()
@@ -65,12 +74,14 @@ class Application(tk.Frame):
                 thread.join()
 
         # Display the results in the GUI
-        result_text = ""
+        self.result_label.config(state=tk.NORMAL)
+        self.result_label.delete("1.0", tk.END)
         for url, counts in results.items():
-            result_text += f"{url}:\n"
+            self.result_label.insert(tk.END, f"{url}:\n")
             for keyword, count in counts.items():
-                result_text += f"  {keyword}: {count}\n"
-        self.result_label.config(text=result_text)
+                self.result_label.insert(tk.END, f"  {keyword}: {count}\n")
+        self.result_label.config(state=tk.DISABLED)
+
 
 
     def scrape_website(self, url, keywords, results):
