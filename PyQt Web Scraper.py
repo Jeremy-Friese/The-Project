@@ -3,10 +3,6 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon, QIntValidator
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QTextEdit, QFileDialog
 
-import sys
-from PyQt5.QtGui import QIcon, QIntValidator
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QTextEdit, QFileDialog
-
 class KeywordScraper(QMainWindow):
     def __init__(self):
         super().__init__()
